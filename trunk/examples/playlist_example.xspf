@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+<title>Playlist</title>
+<creator>BjornW</creator>
+<annotation>Comment</annotation>
+<info>http://www.more.info</info>
+<location>http://www.somelocation.nl</location>
+<identifier>098f6bcd4621d373cade4e832627b4f6</identifier>
+<image>http://pear.php.net/gifs/pearsmall.gif</image>
+<date>2005-06-04T20:53:05+02:00</date>
+<license>http://www.license.info</license>
+<trackList>
+<track>
+<location>test2.mp3</location>
+<identifier />
+<title>Title of track0</title>
+<creator>Creator of track0</creator>
+<annotation>Annotation of track0</annotation>
+<info>Info of track0</info>
+<image>Image of track0</image>
+<album>Album of track0</album>
+<trackNum>0</trackNum>
+<duration>Duration of track0</duration>
+</track>
+<track>
+<location>test1.mp3</location>
+<identifier />
+<title>Title of track1</title>
+<creator>Creator of track1</creator>
+<annotation>Annotation of track1</annotation>
+<info>Info of track1</info>
+<image>Image of track1</image>
+<album>Album of track1</album>
+<trackNum>1</trackNum>
+<duration>Duration of track1</duration>
+</track>
+<track>
+<location>test2.mp3</location>
+<identifier />
+<title>Title of track2</title>
+<creator>Creator of track2</creator>
+<annotation>Annotation of track2</annotation>
+<info>Info of track2</info>
+<image>Image of track2</image>
+<album>Album of track2</album>
+<trackNum>2</trackNum>
+<duration>Duration of track2</duration>
+</track>
+<track>
+<location>test1.mp3</location>
+<identifier />
+<title>Title of track3</title>
+<creator>Creator of track3</creator>
+<annotation>Annotation of track3</annotation>
+<info>Info of track3</info>
+<image>Image of track3</image>
+<album>Album of track3</album>
+<trackNum>3</trackNum>
+<duration>Duration of track3</duration>
+</track>
+<track>
+<location>test2.mp3</location>
+<identifier />
+<title>Title of track4</title>
+<creator>Creator of track4</creator>
+<annotation>Annotation of track4</annotation>
+<info>Info of track4</info>
+<image>Image of track4</image>
+<album>Album of track4</album>
+<trackNum>4</trackNum>
+<duration>Duration of track4</duration>
+</track>
+<track>
+<location>test1.mp3</location>
+<identifier />
+<title>Title of track5</title>
+<creator>Creator of track5</creator>
+<annotation>Annotation of track5</annotation>
+<info>Info of track5</info>
+<image>Image of track5</image>
+<album>Album of track5</album>
+<trackNum>5</trackNum>
+<duration>Duration of track5</duration>
+</track>
+<track>
+<location>test2.mp3</location>
+<identifier />
+<title>Title of track6</title>
+<creator>Creator of track6</creator>
+<annotation>Annotation of track6</annotation>
+<info>Info of track6</info>
+<image>Image of track6</image>
+<album>Album of track6</album>
+<trackNum>6</trackNum>
+<duration>Duration of track6</duration>
+</track>
+<track>
+<location>test1.mp3</location>
+<identifier />
+<title>Title of track7</title>
+<creator>Creator of track7</creator>
+<annotation>Annotation of track7</annotation>
+<info>Info of track7</info>
+<image>Image of track7</image>
+<album>Album of track7</album>
+<trackNum>7</trackNum>
+<duration>Duration of track7</duration>
+</track>
+<track>
+<location>test2.mp3</location>
+<identifier />
+<title>Title of track8</title>
+<creator>Creator of track8</creator>
+<annotation>Annotation of track8</annotation>
+<info>Info of track8</info>
+<image>Image of track8</image>
+<album>Album of track8</album>
+<trackNum>8</trackNum>
+<duration>Duration of track8</duration>
+</track>
+<track>
+<location>test1.mp3</location>
+<identifier />
+<title>Title of track9</title>
+<creator>Creator of track9</creator>
+<annotation>Annotation of track9</annotation>
+<info>Info of track9</info>
+<image>Image of track9</image>
+<album>Album of track9</album>
+<trackNum>9</trackNum>
+<duration>Duration of track9</duration>
+</track>
+<track>
+<location>test2.mp3</location>
+<identifier />
+<title>Title of track10</title>
+<creator>Creator of track10</creator>
+<annotation>Annotation of track10</annotation>
+<info>Info of track10</info>
+<image>Image of track10</image>
+<album>Album of track10</album>
+<trackNum>10</trackNum>
+<duration>Duration of track10</duration>
+</track>
+</trackList>
+</playlist>
