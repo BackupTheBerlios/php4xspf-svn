@@ -19,7 +19,6 @@
 * along with this program; if not, write to the Free Software
 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 *
-*	last updated 28/05/2005
 *********************************************/
 require_once('../class.XSPF.php');
 
@@ -74,8 +73,7 @@ if($playlist = $xspf->getPlaylistXML()) {
 	/* output the playlist to the browser */
 	echo header('Content-type: text/xml');
 	echo $playlist;
+} else {
+ echo "no playlist created";
 }
-
-
-
 ?>

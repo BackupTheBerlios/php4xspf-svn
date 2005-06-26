@@ -23,7 +23,6 @@
 *		-XSPF
 *	mimetype: application/xspf+xml.
 *
-*	last updated 28/05/2005
 *********************************************/
 
 /* Enable these three lines during debugging: */

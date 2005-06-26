@@ -30,7 +30,7 @@
 *	http://www.sitepoint.com/print/xml-php-pear-xml_serializer
 *	http://www.melonfire.com/community/columns/trog/article.php?id=244&page=5
 *
-*	last updated 28/05/2005
+*	
 *********************************************/
 
 /* Enable these three lines during debugging: */
@@ -149,14 +149,15 @@ if(!ini_set("include_path",".:/usr/lib/php")) {
 			$root_attributes['xmlns'] = $this->getXMLNS();
 			
 			// serializer options
+			// this have been changed with version 0.16.0 of XML_Serializer
 			$serializer_options = array (
-				'addDecl'=>TRUE,
-				'encoding'=>$this->getCharSet(),
-				'rootName'=>'playlist',
-				'rootAttributes'=>$root_attributes,
-				'mode'=>'simplexml'
+				XML_SERIALIZER_OPTION_XML_DECL_ENABLED=>true,
+				XML_SERIALIZER_OPTION_XML_ENCODING=>$this->getCharSet(),
+				XML_SERIALIZER_OPTION_ROOT_NAME=>'playlist',
+				XML_SERIALIZER_OPTION_ROOT_ATTRIBS=>$root_attributes,
+				XML_SERIALIZER_OPTION_MODE=>XML_SERIALIZER_MODE_SIMPLEXML
 			);
-			
+			  
 			// Instantiate the serializer with the options
 			$Serializer = &new XML_Serializer($serializer_options);
 			
@@ -483,7 +484,7 @@ if(!ini_set("include_path",".:/usr/lib/php")) {
 				return $this->playlist_xml;
 			} else {
 				$this->serializePlaylist();
-				return false;
+				return $this->playlist_xml;
 			}
  			
 		}
