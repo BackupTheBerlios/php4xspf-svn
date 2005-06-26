@@ -268,42 +268,45 @@
 		
 		/***** GETTERS *****/
 		
+		/**
+		*	all getter functions return either the corresponding value or null
+		*/
 		
 		function getTrackTitle() {
-			return $this->track_title;
+			return $val = (empty($this->track_title)) ? null : $this->track_title;
 		}
 		
 		function getTrackAlbum() {
-			return $this->track_album;
+			return $val = (empty($this->track_album)) ? null : $this->track_album;
 		}
 		
 		function getTrackNr() {
-			return $this->track_nr;
+			return $val = (empty($this->track_nr)) ? null : $this->track_nr;
 		}
 
 		function getTrackAnnotation() {
-			return $this->track_annotation;
+			return $val = (empty($this->track_annotation)) ? null : $this->track_annotation;
 		}
 		
 		function getTrackCreator() {
-			return $this->track_creator;
+			return $val = (empty($this->track_creator)) ? null : $this->track_creator;
 		}
 		
 		function getTrackDuration() {
-			return $this->track_duration;
+			return $val = (empty($this->track_duration)) ? null : $this->track_duration;
 		}
 		
 		function getTrackImage() {
-			return $this->track_image;
+			return $val = (empty($this->track_image)) ? null : $this->track_image;
 		}
 		
 		function getTrackIdentifier() {
-			return $this->track_identifiers;
+			return $val = (empty($this->track_identifiers)) ? null : $this->track_identifiers;
 		}
 		
 		
 		function getTrackInfo() {
-			return $this->track_info;
+			return $val = (empty($this->track_info)) ? null : $this->track_info;
 		}
 		
 		
@@ -315,9 +318,4 @@
 		}
 	}
 
-
-
-
-
-	
 ?>

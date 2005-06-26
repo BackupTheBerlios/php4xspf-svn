@@ -155,7 +155,8 @@ if(!ini_set("include_path",".:/usr/lib/php")) {
 				XML_SERIALIZER_OPTION_XML_ENCODING=>$this->getCharSet(),
 				XML_SERIALIZER_OPTION_ROOT_NAME=>'playlist',
 				XML_SERIALIZER_OPTION_ROOT_ATTRIBS=>$root_attributes,
-				XML_SERIALIZER_OPTION_MODE=>XML_SERIALIZER_MODE_SIMPLEXML
+				XML_SERIALIZER_OPTION_MODE=>XML_SERIALIZER_MODE_SIMPLEXML,
+				XML_SERIALIZER_OPTION_IGNORE_NULL=>true
 			);
 			  
 			// Instantiate the serializer with the options
@@ -420,6 +421,11 @@ if(!ini_set("include_path",".:/usr/lib/php")) {
 		
 		/***** GETTERS *****/
 		
+		/**
+		* all getter functions return either the corresponding value or null
+		* except for the getVersion, getXMLNS and getCharset	
+		*/
+		
 		
 		/* get the version */
 		function getVersion() {
@@ -435,39 +441,39 @@ if(!ini_set("include_path",".:/usr/lib/php")) {
 		}
 		
 		function getPlaylistTitle() {
-			return $this->playlist_title;
+			return $val = (empty($this->playlist_title)) ? null : $this->playlist_title;
 		}
 		
 		function getPlaylistCreator() {
-			return $this->playlist_creator;
+			return $val = (empty($this->playlist_creator)) ? null : $this->playlist_creator;
 		}
 		
 		function getPlaylistAnnotation() {
-			return $this->playlist_annotation;
+			return $val = (empty($this->playlist_annotation)) ? null : $this->playlist_annotation;
 		}
 		
 		function getPlaylistInfo() {
-			return $this->playlist_info;
+			return $val = (empty($this->playlist_info)) ? null : $this->playlist_info;
 		}
 		
 		function getPlaylistImage() {
-			return $this->playlist_image;
+			return $val = (empty($this->playlist_image)) ? null : $this->playlist_image;
 		}
 		
 		function getPlaylistDate() {
-			return $this->playlist_date;
+			return $val = (empty($this->playlist_date)) ? null : $this->playlist_date;
 		}
 		
 		function getPlaylistLicense() {
-			return $this->playlist_license;
+			return $val = (empty($this->playlist_license)) ? null : $this->playlist_license;
 		}
 		
 		function getPlaylistLocation() {
-			return $this->playlist_location;
+			return $val = (empty($this->playlist_location)) ? null : $this->playlist_location;
 		}
 		
 		function getPlaylistIdentifier() {
-			return $this->playlist_identifier;
+			return $val = (empty($this->playlist_identifier)) ? null : $this->playlist_identifier;
 		}
 		
 		
@@ -476,8 +482,9 @@ if(!ini_set("include_path",".:/usr/lib/php")) {
 		}
 		
 		function getTracklist() {
-			return $this->tracklist;
+			return $val = (empty($this->tracklist)) ? null : $this->tracklist;
 		}
+		
 		
 		function getPlaylistXML() {
 			if(!empty($this->playlist_xml)) {
