@@ -40,9 +40,22 @@ $xspf->setPlaylistLocation("http://www.somelocation.nl");
 $xspf->setPlaylistInfo("http://www.more.info");
 $xspf->setPlaylistLicense("http://www.license.info");
 
+/* this is (for now) mandatory if you plan on using the extension element in the track element */
+$extension = array('_content'=>array('firstname'=>'Bjorn','lastname'=>'Wijers', 'age'=>25));
+$meta = array(0=>'a Creative Commons license');
+
 /* 
 * create a few tracks 
 * to give an impression
+*
+* NOTE:
+* this order is of importance:
+* 	
+*	$track['track_extension_application'] = "http://www.simuze.nl";
+*	$track['track_meta_rel'] ="http://creativecommons.org/licenses/by/2.0/";
+*	$track['track_meta'] = $meta;
+*	$track['track_extension'] = $extension;
+*
 */
 for($i = 0; $i< 11; $i++) {
 	$track = array();
@@ -64,6 +77,10 @@ for($i = 0; $i< 11; $i++) {
 	$track['track_album'] = "Album of track$i";
 	$track['track_nr'] = $i;
 	$track['track_location'] = $locations;
+	$track['track_extension_application'] = "http://www.simuze.nl";
+	$track['track_meta_rel'] ="http://creativecommons.org/licenses/by/2.0/";
+	$track['track_meta'] = $meta;
+	$track['track_extension'] = $extension;
 	$xspf->addTrack($track);
 }
 

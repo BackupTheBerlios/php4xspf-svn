@@ -38,7 +38,9 @@
 		var $track_creator; 						// value or NULL
 		var $track_duration;						// value or NULL
 		var $track_image; 							// value or NULL
-		var $track_info;							// value or NULL,
+		var $track_info;							// value or NULL
+		var $track_extension_application;			// value or NULL,
+		var $track_meta_rel;						// value or NULL,
 		var $track_links = array();	       			// plural element names are arrays
 		var $track_locations = array();    			// plural element names are arrays
 		var $track_metas= array(); 	       			// plural element names are arrays
@@ -102,9 +104,19 @@
 							$this->setTrackMeta($value);
 							break;
 							
+						case "track_meta_rel":
+							$this->setTrackMetaRel($value);
+							break;
+							
 						case "track_extension":
 							$this->setTrackExtension($value);
 							break;	
+					
+						case "track_extension_application":
+							$this->setTrackExtensionApplication($value);
+							break;	
+							
+							
 					}
 				}
 			}
@@ -251,19 +263,50 @@
 				return false;		
 			}
 			
-			foreach($metas as $key=>$value) {
-				array_push($this->track_metas, $value);
+			if($this->getTrackMetaRel() == null) {
+				return false;
 			}
-		}
 
+			foreach ($metas as $key=>$val){
+				$meta_node = array('__attributes'=> array( 'rel'=> $this->getTrackMetaRel()), $val);
+				array_push($this->track_metas, $meta_node);
+			}	
+			
+			//foreach($metas as $key=>$value) {
+			//	array_push($this->track_metas, $value);
+			//}
+		}
+		
+		/* set the rel attribute of the mete node */
+		function setTrackMetaRel($rel) {
+			$this->track_meta_rel = $rel;
+		}
+		
+		/* set the application attribute of the extension node */
+		function setTrackExtensionApplication($application) {
+			$this->track_extension_application = $application;
+		}
+		
+		/* 
+		* set one or multiple extensions 
+		* NOTE: the $extensions needs to be an array
+		* with the first key called _content!
+		* i.e. $extension = array('_content'=>array('firstnode'=>'firstinfo','secondnode'=>'secinfo', 'thirdnode'=>'thirdinfo'));
+		*
+		*/
 		function setTrackExtension($extensions) {
 			if(!is_array($extensions)) {
 				return false;		
 			}
 			
-			foreach($extensions as $key=>$value) {
-				array_push($this->track_extensions, $value);
+			if($this->getTrackExtensionApplication() == null) {
+				return false;
 			}
+
+			foreach ($extensions as $key=>$val){
+				$extension_node = array('__attributes'=> array( 'application'=> $this->getTrackExtensionApplication()), $val);
+				array_push($this->track_extensions, $extension_node);
+			}								
 		}
 		
 		/***** GETTERS *****/
@@ -307,6 +350,23 @@
 		
 		function getTrackInfo() {
 			return $val = (empty($this->track_info)) ? null : $this->track_info;
+		}
+		
+		function getTrackMetas() {
+			return $val = (empty($this->track_metas)) ? null : $this->track_metas;
+		}
+				
+		function getTrackExtensions() {
+			return $val = (empty($this->track_extensions)) ? null : $this->track_extensions;
+		}
+		
+		
+		function getTrackExtensionApplication() {
+			return $val = (empty($this->track_extension_application)) ? null : $this->track_extension_application;
+		}
+		
+		function getTrackMetaRel() {
+			return $val = (empty($this->track_meta_rel)) ? null : $this->track_meta_rel;
 		}
 		
 		

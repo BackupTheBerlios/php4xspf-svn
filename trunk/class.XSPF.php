@@ -119,7 +119,9 @@ if(!ini_set("include_path",".:/usr/lib/php")) {
 									'image'=> $value->getTrackImage(),
 									'album'=> $value->getTrackAlbum(),
 									'trackNum'=> $value->getTrackNr(),
-									'duration'=> $value->getTrackDuration()
+									'duration'=> $value->getTrackDuration(),
+									'meta'=> $value->getTrackMetas(),
+									'extension'=> $value->getTrackExtensions()
 								 );
 					array_push($list['track'], $a_track);			 
 				}
@@ -156,7 +158,9 @@ if(!ini_set("include_path",".:/usr/lib/php")) {
 				XML_SERIALIZER_OPTION_ROOT_NAME=>'playlist',
 				XML_SERIALIZER_OPTION_ROOT_ATTRIBS=>$root_attributes,
 				XML_SERIALIZER_OPTION_MODE=>XML_SERIALIZER_MODE_SIMPLEXML,
-				XML_SERIALIZER_OPTION_IGNORE_NULL=>true
+				XML_SERIALIZER_OPTION_IGNORE_NULL=>true,
+				XML_SERIALIZER_OPTION_ATTRIBUTES_KEY=>'__attributes',
+				XML_SERIALIZER_OPTION_CONTENT_KEY=>'__content'
 			);
 			  
 			// Instantiate the serializer with the options
